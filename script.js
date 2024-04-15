@@ -1,11 +1,15 @@
-let dollar = document.getElementById("dollar");
-let euro = document.getElementById("euro");
+const msg = document.querySelector(".msg")
+const taux = 6.55957
+const convertisseur = document.getElementById("convertisseur")
+console.log(convertisseur)
 
-dollar.onkeyup =function(){
+convertisseur.addEventListener("input",function(){
+    var valeurConvertisseur = this.value
+    if (!isNaN(valeurConvertisseur)) {
+        msg.textContent = (valeurConvertisseur*taux).toFixed(2)
+    }
+    else {
+        msg.textContent= " saisir une valeur numérique"
+    }
+})
 
-    euro.value = dollar.value*0.2
-}.
-euro.onkeyup =function(){
-
-    dollar.value = euro.value*1.09;
-}
